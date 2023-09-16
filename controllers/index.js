@@ -3,7 +3,7 @@ const newFunction = (req, res, next) => {
 };
 
 const secondFunction = (req, res, next) => {
-    res.json('is very cool!');
+    res.json('is very very cool!');
 };
 
 module.exports = { newFunction, secondFunction };
