@@ -2,3 +2,10 @@ GET http://localhost:3000 HTTP/1.1
 
 ###
 GET http://localhost:3000/secondfunction HTTP/1.1
+
+###
+GET https://cse-341-yareh.onrender.com HTTP/1.1
+
+###
+GET https://cse-341-yareh.onrender.com/secondfunction HTTP/1.1
+
