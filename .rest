@@ -12,7 +12,7 @@ GET http://localhost:8080/contacts/650cf487ae50efad65e141a1 HTTP/1.1
 GET http://localhost:8080/contacts/650cf6deae50efad65e141a5 HTTP/1.1
 
 ###
-GET https://cse-341-yareh.onrender.com HTTP/1.1
+GET https://cse-341-yareh.onrender.com/contacts HTTP/1.1
 ###
 GET https://cse-341-yareh.onrender.com/contacts/650ccb1dae50efad65e1419e HTTP/1.1
 ###
