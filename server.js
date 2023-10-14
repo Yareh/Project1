@@ -4,8 +4,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.json());
 const { ConectionDb } = require("./DB/conection");
-//prevent No 'Access-Control-Allow-Origin'
 
+//prevent No 'Access-Control-Allow-Origin'
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 ConectionDb((err) => {
   if (!err) {
     app.listen(port, () => {
-      console.log(`app listening on port ${port}`);
+      console.log(`App listening on port ${port}`);
     });
   } else {
     console.log(`Conection error: ${err}`);

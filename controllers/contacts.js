@@ -23,11 +23,52 @@ const getContactsById = (req, res) => {
       res.status(200).send(doc);
     })
     .catch(() => {
-      res.status(500).json({ error: "Could not retrieve the document by id." });
+      res.status(500).json({ error: "Could not retrieve the contact by id." });
+    });
+};
+
+const insertContact = (req, res) => {
+  const db = getDb();
+  const contact = req.body;
+  db.collection("Contacts")
+    .insertOne(contact)
+    .then((result) => {
+      res.status(201).json(result);
+    })
+    .catch((err) => {
+      res.status(500).json({ err: "Could not create a new contact." });
+    });
+};
+
+const updateContact = (req, res) => {
+  const db = getDb();
+  const contact = req.body;
+  db.collection("Contacts")
+    .updateOne({ _id: ObjectId(req.params.id) }, { $set: contact })
+    .then((result) => {
+      res.status(204).send(result);
+    })
+    .catch(() => {
+      res.status(500).json({ error: "Could not update the contact." });
+    });
+};
+
+const deleteContact = (req, res) => {
+  const db = getDb();
+  db.collection("Contacts")
+    .deleteOne({ _id: ObjectId(req.params.id) })
+    .then((result) => {
+      res.status(204).send(result);
+    })
+    .catch(() => {
+      res.status(500).json({ error: "Could not delete contact." });
     });
 };
 
 module.exports = {
   getContacts,
   getContactsById,
+  insertContact,
+  updateContact,
+  deleteContact
 };
