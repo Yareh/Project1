@@ -4,6 +4,8 @@
 //Show result from function 
 ###
 GET http://localhost:8080/contacts HTTP/1.1
+###
+GET http://localhost:8080/temples HTTP/1.1
 
 //Look by a specific id
 ###
