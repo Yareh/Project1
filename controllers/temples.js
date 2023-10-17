@@ -1,6 +1,12 @@
 const { getDb } = require("../DB/conection");
 const { ObjectId } = require("mongodb");
-
+/**
+ * @swagger
+ * components: 
+ *  schemas: 
+ *  temples: 
+ * 
+ */
 const getTemples = (req, res) => {
   const db = getDb();
   let clients = [];
